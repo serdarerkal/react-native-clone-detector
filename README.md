@@ -2,23 +2,24 @@
 
 React Native Android module to detect cloned or parallel app environments and return a clone risk score.
 
-## Installation
-
-
-```sh
-npm install react-native-clone-detector
-```
-
-
 ## Usage
 
 
 ```js
-import { multiply } from 'react-native-clone-detector';
+import { DetectClone } from 'react-native-clone-detector';
 
-// ...
+async function checkCloneStatus() {
+  try {
+    const result = await DetectClone();
 
-const result = multiply(3, 7);
+    console.log(result.isCloned); // boolean
+    console.log(result.score);    // number
+    console.log(result.signals);  // detailed signals
+  } catch (error) {
+    console.error('Clone detection failed:', error);
+  }
+}
+
 ```
 
 

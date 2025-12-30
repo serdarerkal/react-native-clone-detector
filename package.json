@@ -1,26 +1,17 @@
 {
   "name": "react-native-clone-detector",
   "version": "0.1.0",
+  "private": true,
   "description": "React Native Android module to detect cloned or parallel app environments and return a clone risk score.",
-  "main": "./lib/module/index.js",
-  "types": "./lib/typescript/src/index.d.ts",
-  "exports": {
-    ".": {
-      "source": "./src/index.tsx",
-      "types": "./lib/typescript/src/index.d.ts",
-      "default": "./lib/module/index.js"
-    },
-    "./package.json": "./package.json"
-  },
+  "main": "src/index.tsx",
+  "types": "./src/index.d.ts",
   "files": [
     "src",
     "lib",
     "android",
-    "ios",
     "cpp",
     "*.podspec",
     "react-native.config.js",
-    "!ios/build",
     "!android/build",
     "!android/gradle",
     "!android/gradlew",
@@ -32,9 +23,6 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-clone-detector-example",
-    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
-    "prepare": "bob build",
     "typecheck": "tsc"
   },
   "keywords": [
@@ -69,9 +57,6 @@
     "react": "*",
     "react-native": "*"
   },
-  "workspaces": [
-    "example"
-  ],
   "packageManager": "yarn@4.11.0",
   "react-native-builder-bob": {
     "source": "src",
